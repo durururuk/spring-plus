@@ -7,6 +7,7 @@ import org.example.expert.domain.security.SecurityUtil;
 import org.example.expert.domain.user.dto.request.UserChangePasswordRequest;
 import org.example.expert.domain.user.dto.response.ProfilePicResponseDto;
 import org.example.expert.domain.user.dto.response.UserProfileResponseDto;
+import org.example.expert.domain.user.dto.response.UserResponse;
 import org.example.expert.domain.user.entity.User;
 import org.example.expert.domain.user.repository.UserRepository;
 import org.example.expert.util.S3Util;
@@ -15,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -68,5 +70,10 @@ public class UserService {
         userRepository.save(user);
         String presignedUrl = s3Util.createPresignedUrl(keyName);
         return new ProfilePicResponseDto(keyName,presignedUrl);
+    }
+
+    @Transactional(readOnly = true)
+    public List<User> findByNickname(String nickname) {
+       return userRepository.findByNickname(nickname);
     }
 }
