@@ -29,3 +29,18 @@ VPC 내부망 제외 전부 차단
 ## CI/CD With Github Actions
 
 ![chrome_QnCL7GO4b6](https://github.com/user-attachments/assets/45d4a46a-ec8b-4f0a-ac53-cd2bfea0db5d)
+
+## 조회 성능 개선
+DB테이블에 100만개의 USER 더미데이터를 만들고 닉네임(완전일치)으로 조회했을 때 걸리는 시간을 기준으로 성능 측정, 각 경우마다 50회 측정
+
+1.아무 작업도 하지 않은 쿼리메서드(findByNickname())
+ :::평균 실행시간 : 394ms
+
+2.NICKNAME 컬럼에 인덱스 추가 후 1.과 동일한 쿼리메서드
+:::평균 실행시간 : 107ms
+
+
+그 외 추가 실험예정) 
+Redis에 DB캐싱한 뒤 조회 실험 
+
+
