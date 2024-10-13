@@ -6,6 +6,17 @@ Health Check API : (IP):8080/actuator/health
 일정 검색 기능
 제목,담당자명,생성일 기준 기간 검색으로 일정을 검색할 수 있습니다. 제목, 담당자는 부분적으로 일치해도 검색이 가능하고, 기간 검색은 처음날짜, 끝 날짜를 같이 요청해야 합니다.
 
+해당 기능 API 명세서
+
+제목으로 검색   
+https://beautiful-passive-a2e.notion.site/11df1db8463d80f7afb3cf7cfba0cda0
+
+담당자 닉네임으로 검색  
+https://beautiful-passive-a2e.notion.site/11ef1db8463d8033a353d43c7b540d87?pvs=25
+
+생성일 기준 기간 검색  
+https://beautiful-passive-a2e.notion.site/11ef1db8463d8094b1bdfa1786ed8946?pvs=25
+
 ## AWS
 
 **EC2**
